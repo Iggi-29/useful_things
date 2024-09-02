@@ -8,47 +8,47 @@ GO to C:\Users\username\.ssh and check that you have the id_rsa, id_rsa.pub, kno
 Here a guide on how to do it: https://www.youtube.com/watch?v=Irj-2tmV0JM&lc=Ugzh8-D4uZ83ENeMkwp4AaABAg
 
 ### On Linux
-On Linux this commands will be enough:
-cd ~/.shh
-ssh-keygen -t rsa -b 4096 -C "your email if wanted"
-eval $(ssh-agent -s)
-ssh-add "/home/username/.ssh/ssh_file_name"
+On Linux this commands will be enough:<br />
+cd ~/.shh<br />
+ssh-keygen -t rsa -b 4096 -C "your email if wanted"<br />
+eval $(ssh-agent -s)<br />
+ssh-add "/home/username/.ssh/ssh_file_name"<br />
 
-Add then the add public key to your account.
-<br>
+Add then the add public key to your account.<br />
+<br />
 Here a guide on how to do it: https://www.youtube.com/watch?v=EoLrCX1VVog&t=77s
 
 ## Introducing Git into a repository. 
-This are the commands that we will be using in order to start a git instance in any directory and connect it with a remote repo in Git-Hub.
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@github.com:username/name_of_repo; connect the local directory to Git-Hub.
-git push -u origin main; normally the main branch is the first created.
+This are the commands that we will be using in order to start a git instance in any directory and connect it with a remote repo in Git-Hub.<br />
+git init<br />
+git add .<br />
+git commit -m "first commit"<br />
+git remote add origin git@github.com:username/name_of_repo; connect the local directory to Git-Hub.<br />
+git push -u origin main; normally the main branch is the first created.<br />
 
 ## The basic commands staging your changes
-git init; start a git instance, now files in the directory will be tracked.
-git status; check the status of your files.
-git add name_of_files; add the files to git so it tracks them.
-git commit -m "message"; commit the changes done staged by the add command.
-git push; push the changes to the remote version of the repository in Git-Hub.
+git init; start a git instance, now files in the directory will be tracked.<br />
+git status; check the status of your files.<br />
+git add name_of_files; add the files to git so it tracks them.<br />
+git commit -m "message"; commit the changes done staged by the add command.<br />
+git push; push the changes to the remote version of the repository in Git-Hub.<br />
 
 ## Create and work with branches
-git branch; get the branches of the project and locate the working branch.
-git checkout -b name_of_the_branch; create a new branch.
-git checkout name_of_the_branch; change the branch you are in.
-git push --set-upstream origin name_of_the_branch; push that new branch to the remote repository. 
-git merge name_of_the_branch_to_merge_in
+git branch; get the branches of the project and locate the working branch.<br />
+git checkout -b name_of_the_branch; create a new branch.<br />
+git checkout name_of_the_branch; change the branch you are in.<br />
+git push --set-upstream origin name_of_the_branch; push that new branch to the remote repository. <br />
+git merge name_of_the_branch_to_merge_in<br /><br />
 #### Special case
-git branch -m new_branch_name
-git push origin -u new_branch_name
+git branch -m new_branch_name<br />
+git push origin -u new_branch_name<br />
 git push origin --delete old_branch_name -> To change the name of a branch localy and remotely.
 
 ## Get information from the remote version of the repository to our machine
-git clone ___; download the remote repository from Git-Hub to the local machine 
-git fetch; get all the info from all the existing branches remotelly
-git pull origin name_of_the_branch; pull a branch
-git push origin name_of_the_branch; push a branch
+git clone ___; download the remote repository from Git-Hub to the local machine<br /> 
+git fetch; get all the info from all the existing branches remotelly<br />
+git pull origin name_of_the_branch; pull a branch<br />
+git push origin name_of_the_branch; push a branch<br />
 #### Special case
 git clone --single-branch --branch name_of_the_branch ___; Download a single branch of the project
 
