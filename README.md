@@ -29,30 +29,30 @@ This are the commands that we will be using in order to start a git instance in 
 ## The basic commands staging your changes
 `git init` Start a git instance, now files in the directory will be tracked.<br />
 `git status` Check the status of your files.<br />
-`git add name_of_files` Add the files to git so it tracks them.<br />
+`git add "name_of_files"` Add the files to git so it tracks them.<br />
 `git commit -m "message"` Commit the changes done staged by the add command.<br />
 `git push` Push the changes to the remote version of the repository in Git-Hub.<br />
 
 ## Create and work with branches
 `git branch` Get the branches of the project and locate the working branch.<br />
-`git checkout -b name_of_the_branch` Create a new branch.<br />
-`git checkout name_of_the_branch` Change the branch you are in.<br />
-`git push --set-upstream origin name_of_the_branch` Push that new branch to the remote repository. <br />
-`git merge name_of_the_branch_to_merge_in`<br /><br />
+`git checkout -b "name_of_the_branch"` Create a new branch.<br />
+`git checkout "name_of_the_branch"` Change the branch you are in.<br />
+`git push --set-upstream origin "name_of_the_branch"` Push that new branch to the remote repository. <br />
+`git merge "name_of_the_branch_to_merge_in"`<br /><br />
 
 #### Special case (Change the the name of a branch)
-`git branch -m new_branch_name`<br />
-`git push origin -u new_branch_name`<br />
-`git push origin --delete old_branch_name `
+`git branch -m "new_branch_name"`<br />
+`git push origin -u "new_branch_name"`<br />
+`git push origin --delete "old_branch_name"`<br />
 
 ## Get information from the remote version of the repository to our machine
-`git clone ___` Download the remote repository from Git-Hub to the local machine.<br /> 
+`git clone "repo_to_clone"` Download the remote repository from Git-Hub to the local machine.<br /> 
 `git fetch` Get all the info from all the existing branches remotely.<br />
-`git pull origin name_of_the_branch` Pull a branch.<br />
-`git push origin name_of_the_branch` Push a branch.<br />
+`git pull origin "name_of_the_branch"` Pull a branch.<br />
+`git push origin "name_of_the_branch"` Push a branch.<br />
 
 #### Special case (Clone a single branch of a project)
-`git clone --single-branch --branch name_of_the_branch ___`
+`git clone --single-branch --branch "name_of_the_branch"`
 
 # ZSH-Terminal
 This is an extended version of the Bourne Shell (sh) - default terminal for Linux systems - which supports the use of plug-ins and is higly personalizable. In this section I will save some useful code to use this terminal.
@@ -68,9 +68,14 @@ We will download and install the MesloLGS NF font which can be found at the gith
 We will also use the powerlevel10k theme to get a good and visually atractive and also useful terminal: https://github.com/romkatv/powerlevel10k.<br /> 
 
 #### Plug-ins
-Syntax highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+Syntax highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md<br />
 Autosuggestion: https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md<br /> 
-You-should-use: 
+You-should-use: https://github.com/MichaelAquilina/zsh-you-should-use <br />
+exa: https://github.com/ptavares/zsh-exa <br /> 
+ripgrep: https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation<br />
+fzf: https://www.linode.com/docs/guides/how-to-use-fzf/
+
+
 
 ## Uninstall ZSH
 `sudo apt-get --purge remove zsh`
@@ -79,11 +84,11 @@ You-should-use:
 Anaconda is a python (and R) open-source which includes multiple tools that can make it quite easy to download, install and work with different bioinformatic  tools. The key pro to learn anaconda is the use of different environments which enable us to work with different versions of R and Python and libraries with ease. I will put here some useful commands I normally use or that I have to use and that in some cases I tend to forget.
 
 ## Anaconda environments management
-`conda create --name "env name"` Create an environment. <br /> 
-`conda activate/deactivate "env name"` Activate or Deactivate an environment. <br />
-`conda remove --name "env name" --all` Remove an environment. <br />
+`conda create --name "env_name"` Create an environment. <br /> 
+`conda activate/deactivate "env_name"` Activate or Deactivate an environment. <br />
+`conda remove --name "env_name" --all` Remove an environment. <br />
 `conda env list` List all the installed environments.<br /> 
-`conda list "name of package"` All the packages/tools installed in your.<br />  environment, if we specify a package/tool it will show them only. <br /> 
+`conda list "name_of_package"` All the packages/tools installed in your.<br />  environment, if we specify a package/tool it will show them only. <br /> 
 
 ### Use-case (Install STAR 8.9.3 with python3)
 `conda create -n star_env python=3.9` <br />
