@@ -46,10 +46,10 @@ This are the commands that we will be using in order to start a git instance in 
 `git push origin --delete old_branch_name `
 
 ## Get information from the remote version of the repository to our machine
-`git clone ___` Download the remote repository from Git-Hub to the local machine<br /> 
-`git fetch` Get all the info from all the existing branches remotelly<br />
-`git pull origin name_of_the_branch` Pull a branch<br />
-`git push origin name_of_the_branch` Push a branch<br />
+`git clone ___` Download the remote repository from Git-Hub to the local machine.<br /> 
+`git fetch` Get all the info from all the existing branches remotely.<br />
+`git pull origin name_of_the_branch` Pull a branch.<br />
+`git push origin name_of_the_branch` Push a branch.<br />
 
 #### Special case (Clone a single branch of a project)
 `git clone --single-branch --branch name_of_the_branch ___`
@@ -60,7 +60,7 @@ This is an extended version of the Bourne Shell (sh) - default terminal for Linu
 ## Install ZSH
 `sudo apt install zsh` <br />
 `sh -c $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)`
-`sudo chsh -s $(which zsh)` To make the zsh as default terminal<br /> 
+`sudo chsh -s $(which zsh)` To make the zsh as default terminal.<br /> 
 
 ## ZSH Terminal setup
 #### Themes
@@ -74,3 +74,22 @@ You-should-use:
 
 ## Uninstall ZSH
 `sudo apt-get --purge remove zsh`
+
+# Anaconda 
+Anaconda is a python (and R) open-source which includes multiple tools that can make it quite easy to download, install and work with different bioinformatic  tools. The key pro to learn anaconda is the use of different environments which enable us to work with different versions of R and Python and libraries with ease. I will put here some useful commands I normally use or that I have to use and that in some cases I tend to forget.
+
+## Anaconda environments management
+`conda create --name "env name"` Create an environment. <br /> 
+`conda activate/deactivate "env name"` Activate or Deactivate an environment. <br />
+`conda remove --name "env name" --all` Remove an environment. <br />
+`conda env list` List all the installed environments.<br /> 
+`conda list "name of package"` All the packages/tools installed in your.<br />  environment, if we specify a package/tool it will show them only. <br /> 
+
+### Use-case (Install STAR 8.9.3 with python3)
+`conda create -n star_env python=3.9` <br />
+`conda install -c bioconda star=8.9.3` <br />
+
+## Import and export 
+`conda env export | grep -v "^prefix: " > environment.yml` Save the environment state of the current environment.<br />
+`conda env create -f environment.yml` Create an environment from a .yml file.
+
