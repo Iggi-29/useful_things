@@ -1,0 +1,52 @@
+# Aliases
+alias ls="exa"
+alias ll="exa -alh"
+alias tree="exa --tree"
+alias ripgrep="rg"
+GS_function (){
+	param1=$1
+	param2=$2
+	echo "I am doing the function"
+	echo "First parameter: $param1"
+	echo "Second parameter: $param2"
+}
+
+git_clone_function() {
+	user=""
+	repo=""
+	# If nothing is passed
+	if [[ $# -lt 4 ]]; then
+		echo "Usage: GS -u <user> -p <profile>"
+	fi
+	# Parse the variables to their place
+	while [[ $# -gt 0 ]]; do
+	echo "hola"
+		case $1 in
+			-u|--user)
+				user=$2
+				shift 2
+				;;
+			-r|--repo)
+				repo=$2
+				shift 2
+				;;
+			*)
+				echo "No -u|--user and -r|--repo arguments passed, function exiting with 1."
+				set --
+				;;
+		esac
+	done
+
+	# If the parameters are specified do the operation
+	if [[ -n $user || -n $repo ]]; then
+		echo "User: $user"
+		echo "Repo: $repo"
+		echo "Cloning git@github.com:$user/$repo.git"
+		git clone "git@github.com:$user/$repo.git"
+	fi
+}
+
+
+alias GS='GS_function'
+alias gsshclone='git_clone_function'
+
