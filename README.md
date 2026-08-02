@@ -38,7 +38,12 @@ This are the commands that we will be using in order to start a git instance in 
 `git checkout -b "name_of_the_branch"` Create a new branch.<br />
 `git checkout "name_of_the_branch"` Change the branch you are in.<br />
 `git push --set-upstream origin "name_of_the_branch"` Push that new branch to the remote repository. <br />
-`git merge "name_of_the_branch_to_merge_in"`<br /><br />
+`git merge "name_of_the_branch_to_merge_in"`<br /><br /> This will always be done from main, or from the branch we want to merge to the feature branch.
+
+## Generating tags
+`git tag` Get the tags of our project.<br />
+`git tag -a name_of_the_tag` Generate a new tag in our project.<br />
+`git git push origin name of the tag` Push the tag to the remote repository.<br />
 
 #### Special case (Change the the name of a branch)
 `git branch -m "new_branch_name"`<br />
